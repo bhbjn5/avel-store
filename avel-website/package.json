@@ -1,0 +1,10 @@
+{
+  "name": "avel-website",
+  "version": "1.0.0",
+  "description": "AVEL — Premium Leather Slippers. Static marketing/e-commerce-style website (HTML/CSS/JS, no build step required).",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  }
+}

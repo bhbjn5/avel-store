@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVEL — Premium Leather Slippers</title>
+<meta name="description" content="Discover AVEL premium leather slippers — minimalist designs, quality materials, and everyday comfort at a fair price.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="wrap nav">
+    <div class="hamburger" id="hamburgerBtn" style="display:none">
+      <span></span><span></span><span></span>
+    </div>
+    <a href="#" class="logo" onclick="showHome();return false;">AVEL</a>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#journal">Journal</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="Search" onclick="toggleSearch(true)">
+        <span class="icon-clip"><span class="icon-roll">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+        </span></span>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <span class="icon-clip"><span class="icon-roll">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        </span></span>
+      </button>
+      <button class="icon-btn" aria-label="Open cart" onclick="toggleCart(true)">
+        <span class="icon-clip"><span class="icon-roll">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        </span></span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile hamburger duplicate positioned via JS insertion -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-close" onclick="toggleMobileMenu(false)">&times;</div>
+  <ul>
+    <li><a href="#shop" onclick="toggleMobileMenu(false)">Shop</a></li>
+    <li><a href="#collections" onclick="toggleMobileMenu(false)">Collections</a></li>
+    <li><a href="#about" onclick="toggleMobileMenu(false)">About</a></li>
+    <li><a href="#journal" onclick="toggleMobileMenu(false)">Journal</a></li>
+  </ul>
+</div>
+
+<!-- ================= SEARCH DRAWER ================= -->
+<div class="overlay" id="searchOverlay" onclick="toggleSearch(false)"></div>
+<div class="search-drawer" id="searchDrawer" role="dialog" aria-modal="true" aria-label="Search AVEL">
+  <div class="search-head">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="search-input-icon"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+      <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+    </div>
+    <button class="search-close" onclick="toggleSearch(false)" aria-label="Close search">&times;</button>
+  </div>
+  <div class="search-quicklinks">
+    <div class="eyebrow" style="margin-bottom:16px;">Quick links</div>
+    <ul>
+      <li><a href="#shop" onclick="showHome();toggleSearch(false)">Shop All</a></li>
+      <li><a href="#collections" onclick="showHome();toggleSearch(false)">New Arrivals</a></li>
+      <li><a href="#shop" onclick="showHome();toggleSearch(false)">Essentials</a></li>
+      <li><a href="#collections" onclick="showHome();toggleSearch(false)">Signature</a></li>
+      <li><a href="#about" onclick="showHome();toggleSearch(false)">About AVEL</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= HOME VIEW ================= -->
+<div id="homeView">
+
+<!-- HERO SLIDER -->
+<section class="hero" id="heroSlider">
+  <div class="hero-slides" id="heroSlides">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide active" data-slide="0">
+      <picture class="hero-media">
+        <source media="(max-width:768px)" srcset="assets/images/hero-mobile-01.jpg">
+        <img src="assets/images/hero-desktop-01.jpg" alt="AVEL charcoal leather slipper, close detail" loading="eager">
+      </picture>
+      <svg class="hero-slipper" viewBox="0 0 400 260" fill="none" stroke="#111111" stroke-width="1.4">
+        <path d="M40 190 Q40 150 90 140 Q160 128 230 145 Q300 160 340 175 Q365 184 360 205 Q355 225 320 226 L70 226 Q42 224 40 190 Z" fill="#111111" fill-opacity="0.06"/>
+        <path d="M40 190 Q40 150 90 140 Q160 128 230 145 Q300 160 340 175 Q365 184 360 205 Q355 225 320 226 L70 226 Q42 224 40 190 Z"/>
+        <path d="M78 150 Q120 95 190 96 Q230 97 246 132" fill="none"/>
+        <path d="M78 150 Q120 100 190 101 Q222 102 238 128" fill="#111111" fill-opacity="0.1"/>
+        <line x1="70" y1="226" x2="330" y2="226"/>
+      </svg>
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow" style="margin-bottom:18px;">Premium Leather Slippers</div>
+          <h1>QUIETLY<br>PREMIUM.</h1>
+          <p class="sub">Premium leather slippers designed for everyday comfort.</p>
+          <div class="hero-ctas">
+            <a href="#shop" class="btn btn-primary" onclick="showHome();">Shop the Collection</a>
+            <a href="#about" class="btn btn-secondary">Explore AVEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" data-slide="1">
+      <picture class="hero-media">
+        <source media="(max-width:768px)" srcset="assets/images/hero-mobile-02.jpg">
+        <img src="assets/images/hero-desktop-02.jpg" alt="AVEL Essentials slipper worn indoors" loading="lazy">
+      </picture>
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow" style="margin-bottom:18px;">The Essentials Edit</div>
+          <h1>EVERYDAY,<br>ELEVATED.</h1>
+          <p class="sub">Soft full-grain leather, cut for a low, easy profile you'll wear on repeat.</p>
+          <div class="hero-ctas">
+            <a href="#shop" class="btn btn-primary" onclick="showHome();">Shop Essentials</a>
+            <a href="#collections" class="btn btn-secondary" onclick="showHome();">View Collections</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide" data-slide="2">
+      <picture class="hero-media">
+        <source media="(max-width:768px)" srcset="assets/images/hero-mobile-03.jpg">
+        <img src="assets/images/hero-desktop-03.jpg" alt="AVEL Signature limited edition slipper, hand finished" loading="lazy">
+      </picture>
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow" style="margin-bottom:18px;">Limited Release</div>
+          <h1>THE SIGNATURE<br>EDITION.</h1>
+          <p class="sub">Hand-finished, numbered, and boxed — a limited run in select leather.</p>
+          <div class="hero-ctas">
+            <a href="#shop" class="btn btn-primary" onclick="showHome();">Shop Signature</a>
+            <a href="#about" class="btn btn-secondary">Explore AVEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-controls wrap">
+    <button class="hero-arrow prev" onclick="heroNav(-1)" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow next" onclick="heroNav(1)" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- TRENDING NOW -->
+<section class="trending">
+  <div class="wrap trending-head">
+    <h2>Trending Now</h2>
+    <a href="#shop" class="shop-now-link" onclick="showHome();">
+      <span class="snl-text">Shop now</span>
+      <span class="snl-arrow-clip">
+        <span class="snl-arrow-roll">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </a>
+  </div>
+  <div class="wrap trending-carousel-wrap">
+    <button class="carousel-arrow prev" onclick="scrollTrending(-1)" aria-label="Previous trending products">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <div class="trending-track" id="trendingTrack"></div>
+    <button class="carousel-arrow next" onclick="scrollTrending(1)" aria-label="Next trending products">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">The AVEL Edit</div>
+        <h2>Essential Silhouettes</h2>
+      </div>
+      <p>Refined materials. Everyday comfort. A small, considered range built to work for years, not seasons.</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial" id="about">
+  <div class="editorial-bg"></div>
+  <div class="wrap">
+    <div class="editorial-inner reveal">
+      <div class="eyebrow" style="margin-bottom:16px;">Our Philosophy</div>
+      <h2>Less, but<br>better.</h2>
+      <p>We believe everyday essentials should be simple, comfortable, and made to last — nothing added that doesn't need to be there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIAL SPLIT -->
+<section class="material">
+  <div class="material-visual reveal"></div>
+  <div class="material-copy reveal">
+    <div class="eyebrow" style="margin-bottom:14px;">Craftsmanship</div>
+    <h2>Made to<br>be worn.</h2>
+    <p>Premium leather, considered construction, and a timeless silhouette come together in a slipper designed for everyday life.</p>
+    <ul class="detail-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Premium leather</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Comfortable footbed</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Durable construction</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Minimal silhouette</li>
+    </ul>
+    <a href="#" class="btn btn-secondary">Discover the Craft</a>
+  </div>
+</section>
+
+<!-- PRICE / VALUE -->
+<section class="price-section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Honest Pricing</div>
+    <h2 class="reveal">Premium doesn't have to<br>mean overpriced.</h2>
+    <p class="reveal">We focus on what matters: quality materials, thoughtful design, and everyday comfort — without unnecessary markups.</p>
+    <a href="#shop" class="btn btn-light reveal">Shop AVEL</a>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="section" id="collections">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">Browse</div>
+        <h2>Collections</h2>
+      </div>
+      <p>Three directions, one philosophy — quiet, considered, built to last.</p>
+    </div>
+    <div class="collection-grid reveal">
+      <div class="collection-tile"><div><h3>Essentials</h3><p>Everyday minimalist slippers.</p></div></div>
+      <div class="collection-tile"><div><h3>Signature</h3><p>More distinctive designs.</p></div></div>
+      <div class="collection-tile"><div><h3>New Arrivals</h3><p>Latest AVEL releases.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">Reviews</div>
+        <h2>Worn. Loved.<br>Repeated.</h2>
+      </div>
+    </div>
+    <div class="testimonial-grid reveal">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>Clean design, extremely comfortable, and the leather feels great after a few months of daily wear.</p>
+        <div class="who">— Verified Customer</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>Exactly what I wanted — looks far more expensive than it actually was. Sizing was spot on.</p>
+        <div class="who">— Verified Customer</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★☆</div>
+        <p>Simple, well made, and they've held up better than slippers I've paid double for.</p>
+        <div class="who">— Verified Customer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section" id="journal" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">@AVEL</div>
+        <h2>The AVEL World</h2>
+      </div>
+    </div>
+    <div class="social-grid reveal">
+      <div class="social-tile"></div><div class="social-tile"></div><div class="social-tile"></div>
+      <div class="social-tile"></div><div class="social-tile"></div><div class="social-tile"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="wrap">
+    <h2 class="reveal">Stay in the loop.</h2>
+    <p class="reveal">New drops, limited collections, and everything AVEL.</p>
+    <form class="newsletter-form reveal" onsubmit="joinNewsletter(event)">
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Join AVEL</button>
+    </form>
+  </div>
+</section>
+
+</div><!-- /homeView -->
+
+<!-- ================= PRODUCT VIEW ================= -->
+<div id="productView">
+  <div class="wrap">
+    <a href="#" class="back-link" style="padding:0" onclick="showHome();return false;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to shop
+    </a>
+  </div>
+  <div class="pp-wrap">
+    <div>
+      <div class="pp-gallery-main" id="ppGalleryMain"></div>
+      <div class="pp-gallery-thumbs" id="ppThumbs"></div>
+    </div>
+    <div class="pp-info">
+      <div class="eyebrow" id="ppEyebrow">Essentials</div>
+      <h1 id="ppName">AVEL ONE</h1>
+      <div class="pp-price" id="ppPrice">€89</div>
+      <p class="pp-desc" id="ppDesc">A refined leather slipper built around a clean silhouette and everyday comfort.</p>
+
+      <div class="pp-block">
+        <label>Color</label>
+        <div class="color-swatches" id="ppColors"></div>
+      </div>
+      <div class="pp-block">
+        <label>Size (EU)</label>
+        <div class="size-grid" id="ppSizes"></div>
+      </div>
+      <div class="pp-block">
+        <label>Quantity</label>
+        <div class="qty-select">
+          <button onclick="changePpQty(-1)">−</button>
+          <span id="ppQty">1</span>
+          <button onclick="changePpQty(1)">+</button>
+        </div>
+      </div>
+      <div class="pp-ctas">
+        <button class="btn btn-primary" onclick="addPpToCart()">Add to Cart</button>
+        <button class="btn btn-secondary" onclick="addPpToCart();toggleCart(true)">Buy Now</button>
+      </div>
+
+      <div id="ppAccordion">
+        <div class="accordion-item open">
+          <div class="accordion-head" onclick="toggleAccordion(this)">Product Details<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+          <div class="accordion-body"><p>Premium leather. Minimal form. Made for everyday. Hand-finished upper with a cushioned, contoured footbed.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-head" onclick="toggleAccordion(this)">Materials<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+          <div class="accordion-body"><p>Full-grain leather upper, natural rubber outsole, breathable lining. Designed to soften and mold with wear.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-head" onclick="toggleAccordion(this)">Fit<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+          <div class="accordion-body"><p>True to size. If between sizes, we recommend sizing up for a relaxed, everyday fit.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-head" onclick="toggleAccordion(this)">Shipping &amp; Returns<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+          <div class="accordion-body"><p>Free shipping on orders over €75. 30-day returns on unworn pairs in original packaging.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">AVEL</div>
+        <p>Premium leather slippers, designed for everyday comfort. Quietly premium, fairly priced.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul><li><a href="#shop">All Products</a></li><li><a href="#">Essentials</a></li><li><a href="#">Signature</a></li><li><a href="#">New Arrivals</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul><li><a href="#about">Our Story</a></li><li><a href="#">Craftsmanship</a></li><li><a href="#journal">Journal</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul><li><a href="#">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AVEL. All rights reserved.</span>
+      <div class="social-icons">
+        <!-- TODO: replace href="#" with real AVEL social profile URLs -->
+        <a href="#" class="social-icon" aria-label="AVEL on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="AVEL on TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.2a3.3 3.3 0 1 1-3.3-3.3c.28 0 .55.03.8.09V8.2a5.7 5.7 0 1 0 4.9 5.65V9.7c1.02.75 2.27 1.2 3.6 1.2V8.3c-2 0-3.7-1.4-4-3.3V4h-2z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="AVEL on Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8.5h2V5.2c-.35-.05-1.5-.15-2.85-.15C11.6 5.05 10 6.6 10 9.3v2.2H7.5v3.6H10V21h3v-5.9h2.5l.4-3.6H13V9.6c0-.7.2-1.1 1.1-1.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= CART DRAWER ================= -->
+<div class="overlay" id="overlay" onclick="toggleCart(false);toggleMobileMenu(false);"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Bag (<span id="cartHeadCount">0</span>)</h3>
+    <button onclick="toggleCart(false)" style="font-size:22px;">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="subtotal-row"><span>Subtotal</span><span id="cartSubtotal">€0</span></div>
+    <div class="ship-msg" id="shipMsg">Free shipping on orders over €75.</div>
+    <a href="#" class="btn btn-primary" style="width:100%;" onclick="alert('This is a design preview — checkout is not connected.');return false;">Checkout</a>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
