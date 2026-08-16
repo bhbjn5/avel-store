@@ -824,7 +824,7 @@ footer{background:var(--ink);color:var(--white);padding:90px 0 30px;}
     <div class="pp-info">
       <div class="eyebrow" id="ppEyebrow">Essentials</div>
       <h1 id="ppName">AVEL ONE</h1>
-      <div class="pp-price" id="ppPrice">€89</div>
+      <div class="pp-price" id="ppPrice">349 EGP</div>
       <p class="pp-desc" id="ppDesc">A refined leather slipper built around a clean silhouette and everyday comfort.</p>
 
       <div class="pp-block">
@@ -947,7 +947,7 @@ function escapeHtml(str){
 function formatPrice(v){
   const n = Number(v);
   if(isNaN(n)) return escapeHtml(v);
-  return Number.isInteger(n) ? n : n.toFixed(2);
+  return (Number.isInteger(n) ? n : n.toFixed(2)) + ' EGP';
 }
 /* Maps a Supabase `products` row onto the shape the UI expects */
 function mapProduct(row){
